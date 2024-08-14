@@ -2,7 +2,7 @@
 import styles from '../Home.module.scss';
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import plant from '@/app/data/plantList.json';
+import plant from '@/data/plantList.json';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 

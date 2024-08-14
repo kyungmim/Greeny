@@ -6,8 +6,8 @@ import Image from 'next/image';
 import Banner from './(section)/Banner';
 import TodayPlant from './(section)/TodayPlant';
 import TodayDiary from './(section)/TodayDiary';
-import { fetchPosts } from '@/app/data/fetch/postFetch';
 import { DiaryRes, PostRes } from '@/types/post';
+import { fetchPosts } from '@/api/fetch/postFetch';
 const SERVER = process.env.NEXT_PUBLIC_API_SERVER;
 
 export default async function Home() {
