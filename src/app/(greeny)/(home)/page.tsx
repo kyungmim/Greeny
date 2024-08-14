@@ -7,7 +7,7 @@ import Banner from './(section)/Banner';
 import TodayPlant from './(section)/TodayPlant';
 import TodayDiary from './(section)/TodayDiary';
 import { DiaryRes, PostRes } from '@/types/post';
-import { fetchPosts } from '@/api/fetch/postFetch';
+import { fetchPosts } from '@/app/api/fetch/postFetch';
 const SERVER = process.env.NEXT_PUBLIC_API_SERVER;
 
 export default async function Home() {

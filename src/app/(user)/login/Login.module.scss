@@ -57,6 +57,7 @@
       @include flex-horizontal(1rem);
       justify-content: center;
       align-items: center;
+      color: var(--color-gray-10);
     }
 
     p::after,

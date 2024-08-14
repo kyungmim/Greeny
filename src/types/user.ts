@@ -1,11 +1,13 @@
+import { ImageRes } from './image';
+
 export interface UserData {
   _id: number;
   email: string;
   name: string;
   phone: string;
   address: string;
-  type: "seller";
-  image?: string;
+  type: 'seller';
+  image?: ImageRes[];
   token?: {
     accessToken: string;
     refreshToken: string;
@@ -21,7 +23,7 @@ export type UserSimple = {
 };
 
 export type UserForm = {
-  type: "seller";
+  type: 'seller';
   name: string;
   email: string;
   password: string;

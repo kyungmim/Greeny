@@ -629,7 +629,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 1,
           name: '쑥쑤루쑥',
-          image: 'leeBadcuk.jpg',
+          image: '/files/03-Greeny/leeBadcuk.jpg',
         },
         createdAt: getTime(-2, -60 * 60 * 1),
         updatedAt: getTime(-1, -60 * 60 * 20),
@@ -656,7 +656,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 1,
           name: '쑥쑤루쑥',
-          image: 'leeBadcuk.jpg',
+          image: '/files/03-Greeny/leeBadcuk.jpg',
         },
 
         createdAt: getTime(-2, -60 * 60 * 1),
@@ -684,7 +684,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 1,
           name: '쑥쑤루쑥',
-          image: 'leeBadcuk.jpg',
+          image: '/files/03-Greeny/leeBadcuk.jpg',
         },
 
         createdAt: getTime(-2, -60 * 60 * 1),
@@ -712,7 +712,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 1,
           name: '쑥쑤루쑥',
-          image: 'leeBadcuk.jpg',
+          image: '/files/03-Greeny/leeBadcuk.jpg',
         },
         createdAt: getTime(-2, -60 * 60 * 1),
         updatedAt: getTime(-1, -60 * 60 * 20),
@@ -739,7 +739,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 1,
           name: '쑥쑤루쑥',
-          image: 'leeBadcuk.jpg',
+          image: '/files/03-Greeny/leeBadcuk.jpg',
         },
         createdAt: getTime(-2, -60 * 60 * 1),
         updatedAt: getTime(-1, -60 * 60 * 20),
@@ -771,7 +771,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 1,
           name: '쑥쑤루쑥',
-          image: 'leeBadcuk.jpg',
+          image: '/files/03-Greeny/leeBadcuk.jpg',
         },
         createdAt: getTime(-2, -60 * 60 * 1),
         updatedAt: getTime(-1, -60 * 60 * 20),
@@ -802,7 +802,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 2,
           name: '선장',
-          image: 'mincheol.jpg',
+          image: '/files/03-Greeny/mincheol.jpg',
         },
         createdAt: getTime(-2, -60 * 60 * 1),
         updatedAt: getTime(-1, -60 * 60 * 20),
@@ -829,7 +829,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 2,
           name: '선장',
-          image: 'mincheol.jpg',
+          image: '/files/03-Greeny/mincheol.jpg',
         },
         createdAt: getTime(-2, -60 * 60 * 1),
         updatedAt: getTime(-1, -60 * 60 * 20),
@@ -864,7 +864,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 2,
           name: '선장',
-          image: 'mincheol.jpg',
+          image: '/files/03-Greeny/mincheol.jpg',
         },
         createdAt: getTime(-2, -60 * 60 * 1),
         updatedAt: getTime(-1, -60 * 60 * 20),
@@ -891,7 +891,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 2,
           name: '선장',
-          image: 'mincheol.jpg',
+          image: '/files/03-Greeny/mincheol.jpg',
         },
         createdAt: getTime(-2, -60 * 60 * 1),
         updatedAt: getTime(-1, -60 * 60 * 20),
@@ -912,7 +912,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 2,
           name: '선장',
-          image: 'mincheol.jpg',
+          image: '/files/03-Greeny/mincheol.jpg',
         },
         image: [
           {
@@ -953,7 +953,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 2,
           name: '선장',
-          image: 'mincheol.jpg',
+          image: '/files/03-Greeny/mincheol.jpg',
         },
         createdAt: getTime(-2, -60 * 60 * 1),
         updatedAt: getTime(-1, -60 * 60 * 20),
@@ -984,7 +984,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 3,
           name: '금전수 장인',
-          image: 'jiwon.jpeg',
+          image: '/files/03-Greeny/jiwon.jpeg',
         },
         createdAt: getTime(-2, -60 * 60 * 1),
         updatedAt: getTime(-1, -60 * 60 * 20),
@@ -1011,7 +1011,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 3,
           name: '금전수 장인',
-          image: 'jiwon.jpeg',
+          image: '/files/03-Greeny/jiwon.jpeg',
         },
         createdAt: getTime(-2, -60 * 60 * 1),
         updatedAt: getTime(-1, -60 * 60 * 20),
@@ -1038,7 +1038,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 3,
           name: '금전수 장인',
-          image: 'jiwon.jpeg',
+          image: '/files/03-Greeny/jiwon.jpeg',
         },
         createdAt: getTime(-2, -60 * 60 * 1),
         updatedAt: getTime(-1, -60 * 60 * 20),
@@ -1065,7 +1065,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 3,
           name: '금전수 장인',
-          image: 'jiwon.jpeg',
+          image: '/files/03-Greeny/jiwon.jpeg',
         },
         createdAt: getTime(-2, -60 * 60 * 1),
         updatedAt: getTime(-1, -60 * 60 * 20),
@@ -1092,7 +1092,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 3,
           name: '금전수 장인',
-          image: 'jiwon.jpeg',
+          image: '/files/03-Greeny/jiwon.jpeg',
         },
         createdAt: getTime(-2, -60 * 60 * 1),
         updatedAt: getTime(-1, -60 * 60 * 20),
@@ -1123,7 +1123,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 3,
           name: '금전수 장인',
-          image: 'jiwon.jpeg',
+          image: '/files/03-Greeny/jiwon.jpeg',
         },
         createdAt: getTime(-2, -60 * 60 * 1),
         updatedAt: getTime(-1, -60 * 60 * 20),
@@ -1139,9 +1139,9 @@ export const initData = async (clientId, nextSeq) => {
           {
             _id: 1,
             user: {
-              _id: 1,
+              _id: 2,
               name: '선장',
-              image: 'mincheol.jpg',
+              image: '/files/03-Greeny/mincheol.jpg',
             },
             content: '물은 하루에 한 번 주는 것이 좋습니다. \n 하지만 식물마다 다르니 식물의 특성에 맞게 주세요.',
             createdAt: getTime(-2, -60 * 60 * 1),
@@ -1173,7 +1173,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 3,
           name: '금전수 장인',
-          image: 'jiwon.jpeg',
+          image: '/files/03-Greeny/jiwon.jpeg',
         },
         createdAt: getTime(-2, -60 * 60 * 1),
         updatedAt: getTime(-1, -60 * 60 * 20),
@@ -1275,7 +1275,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 3,
           name: '금전수 장인',
-          image: 'jiwon.jpeg',
+          image: '/files/03-Greeny/jiwon.jpeg',
         },
         createdAt: '2024.08.08 11:06:06',
         updatedAt: '2024.08.08 11:06:06',
@@ -1300,7 +1300,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 3,
           name: '금전수 장인',
-          image: 'jiwon.jpeg',
+          image: '/files/03-Greeny/jiwon.jpeg',
         },
         createdAt: '2024.08.08 11:06:06',
         updatedAt: '2024.08.08 11:06:06',
@@ -1337,7 +1337,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 3,
           name: '금전수 장인',
-          image: 'jiwon.jpeg',
+          image: '/files/03-Greeny/jiwon.jpeg',
         },
         createdAt: '2024.08.08 11:06:06',
         updatedAt: '2024.08.08 11:06:06',
@@ -1365,7 +1365,7 @@ export const initData = async (clientId, nextSeq) => {
         user: {
           _id: 1,
           name: '쑥쑤루쑥',
-          image: 'leeBadcuk.jpg',
+          image: '/files/03-Greeny/leeBadcuk.jpg',
         },
         createdAt: getTime(-2, -60 * 60 * 1),
         updatedAt: getTime(-1, -60 * 60 * 20),
