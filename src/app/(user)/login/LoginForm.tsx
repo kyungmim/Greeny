@@ -7,8 +7,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { signInWithCredentials } from '@/app/api/actions/authAction';
 import { signOut } from 'next-auth/react';
+import { useForm } from 'react-hook-form';
+import { UserLoginForm } from '@/types/user';
 
 export default function LoginForm() {
+  const {
+    register,
+    formState: { errors },
+  } = useForm<UserLoginForm>();
+
   return (
     <>
       <form action={() => signOut()}>
@@ -17,21 +24,43 @@ export default function LoginForm() {
       <form action={signInWithCredentials}>
         <div className={styles.input_container}>
           <label htmlFor="email">이메일</label>
-          <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" />
-          <p>이메일 형식이 올바르지 않습니다.</p>
+          <input
+            type="email"
+            id="email"
+            placeholder="이메일을 입력하세요"
+            {...register('email', {
+              required: '이메일을 입력하세요.',
+              pattern: {
+                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                message: '이메일 형식이 올바르지 않습니다.',
+              },
+            })}
+          />
+          {errors.email && <p>{errors.email.message}</p>}
         </div>
 
         <div className={styles.input_container}>
           <label htmlFor="password">비밀번호</label>
-          <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" />
-          <p>비밀번호 형식이 올바르지 않습니다.</p>
+          <input
+            type="password"
+            id="password"
+            placeholder="비밀번호를 입력하세요"
+            {...register('password', {
+              required: '비밀번호를 입력하세요.',
+              minLength: {
+                value: 8,
+                message: '비밀번호 형식이 올바르지 않습니다.',
+              },
+            })}
+          />
+          {errors.password && <p>{errors.password.message}</p>}
         </div>
 
         <p className={styles.signupText}>
           처음 방문이신가요? <Link href={'/signup'}>회원가입</Link>
         </p>
 
-        <button type="submit" className={styles.button} formAction={signInWithCredentials}>
+        <button type="submit" className={styles.button}>
           로그인
         </button>
         <div className={styles.socail}>

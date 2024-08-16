@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${pretendard.variable}`}>
+    <html lang="ko" className={`${pretendard.variable}`}>
       <head>
         <meta charSet="UTF-8" />
         <link rel="icon" type="image/x-icon" href="/images/favicon.svg" />

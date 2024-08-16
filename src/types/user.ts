@@ -22,6 +22,11 @@ export type UserSimple = {
   image: string;
 };
 
+export type UserLoginForm = {
+  email: string;
+  password: string;
+};
+
 export type UserForm = {
   type: 'seller';
   name: string;

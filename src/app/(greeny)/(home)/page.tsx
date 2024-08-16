@@ -8,6 +8,7 @@ import TodayPlant from './(section)/TodayPlant';
 import TodayDiary from './(section)/TodayDiary';
 import { DiaryRes, PostRes } from '@/types/post';
 import { fetchPosts } from '@/app/api/fetch/postFetch';
+import { auth } from '@/auth';
 const SERVER = process.env.NEXT_PUBLIC_API_SERVER;
 
 export default async function Home() {

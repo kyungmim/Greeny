@@ -29,7 +29,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             email: user.email,
             phone: user.phone,
             address: user.address,
-            image: user.profileImage && SERVER + user.profileImage,
+            image: user.image && SERVER + user.image,
             accessToken: user.token.accessToken,
             refreshToken: user.token.refreshToken,
           };

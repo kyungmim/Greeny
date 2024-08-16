@@ -9,9 +9,12 @@ export async function signInWithCredentials(formData: FormData) {
       password: formData.get('password') || '',
       redirect: false,
     });
+    console.log('result', result);
   } catch (err) {
     console.error(err);
   }
+
+  console.log('로그인 성공이다 이자식아');
   redirect('/');
 }
 
