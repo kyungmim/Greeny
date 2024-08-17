@@ -4,6 +4,7 @@ import { ApiResWithValidation, SingleItem } from '@/types/response';
 import { UserData, UserForm } from '@/types/user';
 
 const SERVER = process.env.NEXT_PUBLIC_API_SERVER;
+const DBNAME = process.env.NEXT_PUBLIC_DB_NAME;
 
 export async function signup(formData: UserForm) {
   // 이미지 업로드
@@ -13,6 +14,9 @@ export async function signup(formData: UserForm) {
 
     const fileRes = await fetch(`${SERVER}/files`, {
       method: 'POST',
+      headers: {
+        'client-id': `${DBNAME}`,
+      },
       body,
     });
 
@@ -29,6 +33,7 @@ export async function signup(formData: UserForm) {
   const res = await fetch(`${SERVER}/users`, {
     method: 'POST',
     headers: {
+      'client-id': `${DBNAME}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(formData),

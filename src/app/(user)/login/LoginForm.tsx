@@ -5,23 +5,43 @@ import google from '@images/Social_Google.svg';
 import kakao from '@images/Social_KaKao.svg';
 import Image from 'next/image';
 import Link from 'next/link';
-import { signInWithCredentials } from '@/app/api/actions/authAction';
-import { signOut } from 'next-auth/react';
 import { useForm } from 'react-hook-form';
 import { UserLoginForm } from '@/types/user';
+import Button from '@/components/button/Button';
+import { useRouter } from 'next/navigation';
+import { signInWithCredentials } from '@/app/api/actions/authAction';
+import { signOut } from 'next-auth/react';
 
 export default function LoginForm() {
+  const router = useRouter();
   const {
     register,
     formState: { errors },
+    handleSubmit,
+    setError,
   } = useForm<UserLoginForm>();
+  const onSubmit = async (data: UserLoginForm) => {
+    try {
+      const formData = new FormData();
+      formData.append('email', data.email);
+      formData.append('password', data.password);
+      await signInWithCredentials(formData);
+      router.push('/');
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <>
-      <form action={() => signOut()}>
+      <form
+        action={() => {
+          signOut();
+        }}
+      >
         <button type="submit">로그아웃</button>
       </form>
-      <form action={signInWithCredentials}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.input_container}>
           <label htmlFor="email">이메일</label>
           <input
@@ -60,9 +80,9 @@ export default function LoginForm() {
           처음 방문이신가요? <Link href={'/signup'}>회원가입</Link>
         </p>
 
-        <button type="submit" className={styles.button}>
+        <Button type="submit" btnSize="lg" bgColor="fill">
           로그인
-        </button>
+        </Button>
         <div className={styles.socail}>
           <p>SNS계정으로 로그인</p>
 
