@@ -1,44 +1,41 @@
-import NextAuth from 'next-auth';
+import NextAuth, { CredentialsSignin } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import GithubProvider from 'next-auth/providers/github';
 import GoogleProvider from 'next-auth/providers/google';
 import { fetchAccessToken } from './app/api/fetch/userFetch';
 import { RefreshTokenRes } from './types/response';
 import jwt, { JwtPayload } from 'jsonwebtoken';
+import { login } from './app/api/actions/authAction';
+import { UserLoginForm } from './types/user';
 
 const SERVER = process.env.NEXT_PUBLIC_API_SERVER;
-const DBNAME = process.env.NEXT_PUBLIC_DB_NAME;
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   trustHost: true,
   providers: [
     CredentialsProvider({
+      credentials: {
+        email: {},
+        password: {},
+      },
       async authorize(credentials) {
-        const res = await fetch(`${SERVER}/users/login`, {
-          method: 'POST',
-          headers: {
-            'client-id': `${DBNAME}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(credentials),
-        });
+        const resJson = await login(credentials as UserLoginForm);
 
-        const resJson = await res.json();
         if (resJson.ok) {
           const user = resJson.item;
           return {
-            id: user._id,
+            id: String(user._id),
             type: user.type,
             name: user.name,
             email: user.email,
             phone: user.phone,
             address: user.address,
             image: user.image && SERVER + user.image,
-            accessToken: user.token.accessToken,
-            refreshToken: user.token.refreshToken,
+            accessToken: user.token!.accessToken,
+            refreshToken: user.token!.refreshToken,
           };
         } else {
-          return null;
+          throw new CredentialsSignin(resJson.message, { cause: resJson });
         }
       },
     }),
@@ -54,6 +51,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   session: {
     strategy: 'jwt', //default
     maxAge: 60 * 60 * 24,
+    // maxAge: 0,
   },
   pages: {
     signIn: '/login', // default = '/auto/login'

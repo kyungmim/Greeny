@@ -7,6 +7,7 @@ export interface UserData {
   phone: string;
   address: string;
   type: 'seller';
+  loginType?: 'email' | 'google' | 'github';
   image?: ImageRes[];
   token?: {
     accessToken: string;

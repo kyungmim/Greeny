@@ -130,20 +130,3 @@ export async function plantsDelete<T>(id: number | undefined) {
 
   return resJson;
 }
-
-//식물 북마크
-export async function followPlant(id: string | undefined) {
-  const session = await auth();
-  const url = `${SERVER}/bookmarks/product`;
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'client-id': `${DBNAME}`,
-      Authorization: `Bearer ${session?.accessToken}`,
-    },
-    body: JSON.stringify({ target_id: id }),
-  });
-  const resJson = await res.json();
-
-  return resJson.item;
-}

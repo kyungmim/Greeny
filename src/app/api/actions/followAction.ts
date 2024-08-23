@@ -40,3 +40,21 @@ export async function addUser(_id: number) {
   revalidatePath(`/bookmarks/user`);
   return await res.json();
 }
+
+//식물 북마크
+export async function followPlant(id: string | undefined) {
+  const session = await auth();
+  const url = `${SERVER}/bookmarks/product`;
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'client-id': `${DBNAME}`,
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${session?.accessToken}`,
+    },
+    body: JSON.stringify({ target_id: id }),
+  });
+  const resJson = await res.json();
+
+  return resJson;
+}

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
 import { UserForm } from '@/types/user';
-import { signup } from '@/app/api/actions/useAction';
+import { signup } from '@/app/api/actions/userAction';
 import { useRouter } from 'next/navigation';
 import Button from '@/components/button/Button';
 

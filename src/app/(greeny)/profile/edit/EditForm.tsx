@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { UserInfo, UserForm } from '@/types/user';
 import Button from '@/components/button/Button';
 import photoAdd from '@images/PhotoAddIcon.svg';
-import { editUser } from '@/app/api/actions/useAction';
+import { editUser } from '@/app/api/actions/userAction';
 import { signOut } from 'next-auth/react';
 
 export default function EditForm({ user }: { user: UserInfo }) {
