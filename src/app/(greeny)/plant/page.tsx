@@ -26,7 +26,7 @@ export default async function MyPlant() {
     const diffDays = currentDay && differenceInDays(toDay, currentDay);
 
     return (
-      <Link href={`/myplant/${item._id}`} className={styles.contents_item} key={item._id}>
+      <Link href={`/plant/${item._id}`} className={styles.contents_item} key={item._id}>
         <div className={styles.item_cover}>
           <Image src={`${item.mainImages!.length > 0 ? `${SERVER}${item.mainImages![0].path}` : ''}`} alt="식물 사진" fill sizes="100%" />
         </div>
@@ -47,7 +47,7 @@ export default async function MyPlant() {
         <h2>My Plant</h2>
 
         <div className={styles.btn_box}>
-          <Link href="/myplant/new" className={styles.button_fill}>
+          <Link href="/plant/new" className={styles.button_fill}>
             <span className="hidden">추가</span>
           </Link>
         </div>

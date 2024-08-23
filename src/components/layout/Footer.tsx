@@ -41,10 +41,10 @@ export default function Footer() {
           </Link>
         </li>
         <li>
-          <Link href="/myplant" className={styles.nav_item}>
-            {pathname.includes('/myplant') ? <Image src={diary_sel} alt="나의 식물" width={16} height={16} /> : <Image src={diary_nor} alt="나의 식물" width={16} height={16} />}
+          <Link href="/plant" className={styles.nav_item}>
+            {pathname.includes('/plant') ? <Image src={diary_sel} alt="나의 식물" width={16} height={16} /> : <Image src={diary_nor} alt="나의 식물" width={16} height={16} />}
 
-            <p className={`${pathname.includes('/myplant') ? `${styles.is_active}` : ''}`}>나의 식물</p>
+            <p className={`${pathname.includes('/plant') ? `${styles.is_active}` : ''}`}>나의 식물</p>
           </Link>
         </li>
         <li>

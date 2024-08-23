@@ -1,5 +1,5 @@
 'use client';
-import styles from './MyPlantEdit.module.scss';
+import styles from './MyPlantNew.module.scss';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Button from '@/components/button/Button';
@@ -9,11 +9,11 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import photoAdd from '@images/PhotoAddIcon.svg';
 import plantData from '@/app/data/plantList';
-import { PlantForm, PlantRes } from '@/types/plant';
+import { PlantForm } from '@/types/plant';
 import { format } from 'date-fns';
 import { plantNew } from '@/app/api/actions/plantAction';
 
-export default function MyPlantEditForm({ id }: { id: string }) {
+export default function MyPlantAddForm() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
   const [drop, setDrop] = useState(false);
   const [plantName, setPlantName] = useState('식물을 선택해주세요.');
@@ -101,7 +101,7 @@ export default function MyPlantEditForm({ id }: { id: string }) {
       // console.log(res);
       if (res.ok) {
         alert(`${res.item.name}이(가) 우리 가족에 합류했어요! `);
-        router.replace('/myplant');
+        router.replace('/plant');
       }
     } catch (err) {
       console.log(err);

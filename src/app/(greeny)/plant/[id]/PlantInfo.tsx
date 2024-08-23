@@ -17,7 +17,7 @@ export default function PlantInfo({ item }: { item: PlantRes }) {
   const handleDelete = () => {
     if (confirm(`"정말 떠나보낼 거예요?" \n${item.name}이(가) 마지막으로 잎사귀를 흔들고 있어요... 🍃`) == true) {
       plantsDelete(item._id);
-      router.push('/myplant');
+      router.push('/plant');
     }
   };
 
@@ -31,7 +31,7 @@ export default function PlantInfo({ item }: { item: PlantRes }) {
           </button>
           {menu && (
             <div className={styles.subMenuBox}>
-              <Link href={`/myplant/${item._id}/edit`} className={styles.subMenuItem}>
+              <Link href={`/plant/${item._id}/edit`} className={styles.subMenuItem}>
                 식물 수정
               </Link>
               <hr />

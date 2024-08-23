@@ -114,7 +114,7 @@ export default function PlantDiray({ id, name }: { id: number; name: string }) {
     <div className={styles.layout_wrapper}>
       <div className={styles.diary_head}>
         <h3>식물 일기</h3>
-        <Link href={`/myplant/${id}/diaryNew`} className={styles.diary_add}>
+        <Link href={`/plant/${id}/diaryNew`} className={styles.diary_add}>
           <span className="hidden">식물 일기 추가</span>
         </Link>
       </div>

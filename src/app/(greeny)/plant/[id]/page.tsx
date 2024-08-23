@@ -5,8 +5,6 @@ import { PlantRes } from '@/types/plant';
 import { differenceInDays } from 'date-fns';
 import MyPlantDetail from './PlantDetail';
 import { auth } from '@/auth';
-import { followPlant } from '@/app/api/actions/followAction';
-import FollowBtn from '../../story/diaries/[id]/FollowBtn';
 import FollowButton from './FollowButton';
 const SERVER = process.env.NEXT_PUBLIC_API_SERVER;
 

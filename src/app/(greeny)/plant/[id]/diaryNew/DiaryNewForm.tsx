@@ -85,7 +85,7 @@ export default function DiaryNewForm({ id }: { id: string }): JSX.Element {
       // console.log(res);
       if (res.ok) {
         alert('식물 다이어리가 새잎을 틔웠어요! 🌿');
-        router.push(`/myplant/${id}`);
+        router.push(`/plant/${id}`);
       }
     } catch (err) {
       console.log(err);
