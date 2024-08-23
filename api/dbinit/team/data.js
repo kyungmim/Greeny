@@ -541,48 +541,6 @@ export const initData = async (clientId, nextSeq) => {
         target_id: 4,
         createdAt: getTime(-3, -60 * 60 * 2),
       },
-      {
-        _id: await nextSeq('bookmark'),
-        user_id: 1,
-        type: 'post',
-        target_id: 20,
-        createdAt: getTime(-3, -60 * 60 * 2),
-      },
-      {
-        _id: await nextSeq('bookmark'),
-        user_id: 1,
-        type: 'post',
-        target_id: 24,
-        createdAt: getTime(-3, -60 * 60 * 2),
-      },
-      {
-        _id: await nextSeq('bookmark'),
-        user_id: 2,
-        type: 'post',
-        target_id: 21,
-        createdAt: getTime(-3, -60 * 60 * 2),
-      },
-      {
-        _id: await nextSeq('bookmark'),
-        user_id: 2,
-        type: 'post',
-        target_id: 22,
-        createdAt: getTime(-3, -60 * 60 * 2),
-      },
-      {
-        _id: await nextSeq('bookmark'),
-        user_id: 3,
-        type: 'post',
-        target_id: 26,
-        createdAt: getTime(-3, -60 * 60 * 2),
-      },
-      {
-        _id: await nextSeq('bookmark'),
-        user_id: 3,
-        type: 'post',
-        target_id: 28,
-        createdAt: getTime(-3, -60 * 60 * 2),
-      },
     ],
     // QnA, 공지사항, 게시판
     post: [

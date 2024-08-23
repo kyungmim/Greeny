@@ -8,8 +8,8 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { UserLoginForm } from '@/types/user';
 import { useRouter } from 'next/navigation';
-import Button from '@/components/button/Button';
 import { signInWithCredentials } from '@/app/api/actions/authAction';
+import Button from '@/components/button/Button';
 
 export default function LoginForm() {
   const router = useRouter();
@@ -18,29 +18,21 @@ export default function LoginForm() {
     formState: { errors },
     handleSubmit,
     setError,
-  } = useForm<UserLoginForm>({
-    defaultValues: {
-      email: 'p1@plant.com',
-      password: '11111111',
-    },
-  });
-
-  const onSubmit = async (loginData: UserLoginForm) => {
-    const resData = await signInWithCredentials(loginData);
-    if (!resData) {
-      alert(`안녕하세요 Greeny입니다! \n환영합니다. :)`);
-      // router.push('/');
-    } else if (!resData.ok) {
-      if ('errors' in resData) {
-        resData.errors.forEach((error) => setError(error.path, { message: error.msg }));
-      } else if (resData.message) {
-        alert(resData.message);
-      }
+  } = useForm<UserLoginForm>();
+  const onSubmit = async (data: UserLoginForm) => {
+    try {
+      const formData = new FormData();
+      formData.append('email', data.email);
+      formData.append('password', data.password);
+      await signInWithCredentials(formData);
+      router.push('/');
+    } catch (error) {
+      console.error(error);
     }
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.input_container}>
         <label htmlFor="email">이메일</label>
         <input
@@ -79,7 +71,7 @@ export default function LoginForm() {
         처음 방문이신가요? <Link href={'/signup'}>회원가입</Link>
       </p>
 
-      <Button type="submit" btnSize="lg" bgColor="fill" onClick={handleSubmit(onSubmit)}>
+      <Button type="submit" btnSize="lg" bgColor="fill">
         로그인
       </Button>
       <div className={styles.socail}>
