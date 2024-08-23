@@ -1,12 +1,17 @@
 'use client';
-import Button from '@/components/button/Button';
+import { PlantBookmark } from '@/types/bookmark';
 import styles from './MyPlantDetail.module.scss';
-import { followPlant } from '@/app/api/actions/followAction';
+import { followPlant, unFollowPlant } from '@/app/api/actions/followAction';
 
-export default function FollowButton({ id }: { id: string }) {
+export default function FollowButton({ id, bookmarkData }: { id: string; bookmarkData: PlantBookmark[] }) {
+  const isFollowed = bookmarkData.some((num) => Number(id) === num.product._id);
+  const LikeId = bookmarkData.find((num) => Number(id) === num.product._id);
+
   return (
-    <Button type="button" btnSize="lg" bgColor="fill" radiusStyle="round" onClick={() => followPlant(id)}>
-      식물 친구 추가
-    </Button>
+    <>
+      <button type="button" className={isFollowed ? styles.unFollowBtn : styles.followBtn} onClick={() => (isFollowed ? unFollowPlant(LikeId?._id) : followPlant(id))}>
+        {isFollowed ? '언팔로우' : '팔로우'}
+      </button>
+    </>
   );
 }

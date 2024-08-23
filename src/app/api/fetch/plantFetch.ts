@@ -12,3 +12,16 @@ export async function fetchPlantsDetail<T>(id: string | undefined) {
 
   return resJson.item;
 }
+
+export async function fetchPlantsLike<T>(accessToken: string | undefined) {
+  const url = `${SERVER}/bookmarks/product`;
+  const res = await fetch(url, {
+    headers: {
+      'client-id': `${DBNAME}`,
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+  const resJson = await res.json();
+
+  return resJson.item;
+}

@@ -41,8 +41,7 @@
       box-sizing: border-box;
     }
 
-    .plant_with,
-    button {
+    .plant_with {
       margin-top: 1.3rem;
     }
   }
@@ -240,4 +239,20 @@
       }
     }
   }
+}
+
+.followBtn,
+.unFollowBtn {
+  width: 100%;
+  padding: 1rem;
+  background-color: #a7c4a0;
+  border-radius: 10rem;
+  color: var(--color-white);
+  transition: all 0.3s;
+}
+
+.unFollowBtn {
+  background-color: var(--color-white);
+  color: #a7c4a0;
+  border: 0.1rem solid #a7c4a0;
 }

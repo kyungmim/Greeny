@@ -52,9 +52,22 @@ export async function followPlant(id: string | undefined) {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${session?.accessToken}`,
     },
-    body: JSON.stringify({ target_id: id }),
+    body: JSON.stringify({ target_id: Number(id) }),
   });
-  const resJson = await res.json();
+  revalidatePath(`/plant/${id}`);
+  return await res.json();
+}
 
-  return resJson;
+export async function unFollowPlant(id: number | undefined) {
+  const session = await auth();
+  const url = `${SERVER}/bookmarks/${id}`;
+  const res = await fetch(url, {
+    method: 'DELETE',
+    headers: {
+      'client-id': `${DBNAME}`,
+      Authorization: `Bearer ${session?.accessToken}`,
+    },
+  });
+  revalidatePath(`/plant/${id}`);
+  return await res.json();
 }
