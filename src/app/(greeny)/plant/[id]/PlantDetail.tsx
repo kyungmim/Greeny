@@ -25,7 +25,7 @@ export default function MyPlantDetail({ item }: { item: PlantRes }) {
           <span className="hidden">일기</span>
         </button>
       </div>
-      {tabMenun ? <PlantInfo item={item} /> : <PlantDiray id={item._id} name={item.name} />}
+      {tabMenun ? <PlantInfo item={item} /> : <PlantDiray productId={item._id} name={item.name} sellerId={item.seller_id} />}
     </>
   );
 }

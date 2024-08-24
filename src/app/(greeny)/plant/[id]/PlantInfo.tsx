@@ -5,10 +5,12 @@ import { useState } from 'react';
 import { plantsDelete } from '@/app/api/actions/plantAction';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useSession } from 'next-auth/react';
 
 export default function PlantInfo({ item }: { item: PlantRes }) {
   const [menu, setMenu] = useState(false);
   const router = useRouter();
+  const session = useSession();
 
   const handleMenu = () => {
     setMenu(!menu);
@@ -26,9 +28,11 @@ export default function PlantInfo({ item }: { item: PlantRes }) {
       <div className={styles.plant_gardening}>
         <div className={styles.plant_head}>
           <h3>가드닝 정보</h3>
-          <button className={styles.subMeun} onClick={handleMenu}>
-            <span className="hidden">메뉴</span>
-          </button>
+          {Number(session.data?.user?.id) === item?.seller_id && (
+            <button className={styles.subMeun} onClick={handleMenu}>
+              <span className="hidden">메뉴</span>
+            </button>
+          )}
           {menu && (
             <div className={styles.subMenuBox}>
               <Link href={`/plant/${item._id}/edit`} className={styles.subMenuItem}>
