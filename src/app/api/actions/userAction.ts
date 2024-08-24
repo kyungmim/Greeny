@@ -36,8 +36,6 @@ export async function signup(formData: FormData): Promise<ApiResWithValidation<S
     }
     const fileData: MultiItem<FileRes> = await fileRes.json();
 
-    console.log(fileData);
-
     userObj.image = fileData.item[0].path;
   }
 
